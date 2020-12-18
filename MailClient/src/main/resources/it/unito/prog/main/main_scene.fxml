@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="1200.0" styleClass="body"
+            stylesheets="@main_scene.css" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            fx:controller="it.unito.prog.controllers.MainController">
+    <AnchorPane AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="0.0">
+        <AnchorPane prefWidth="221.0" styleClass="footer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.topAnchor="0.0">
+            <ImageView fitHeight="50.0" fitWidth="50.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="25.0"
+                       preserveRatio="true">
+                <Image url="@../icon.png"/>
+            </ImageView>
+            <Label AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="75.0" styleClass="logo-text" text="MailClient"/>
+
+            <Button fx:id="inboxFolderBtn" disable="true" onAction="#changeFolder" prefWidth="200.0" text="Inbox"
+                    AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="75.0"/>
+            <Button fx:id="outboxFolderBtn" onAction="#changeFolder" prefWidth="200.0" text="Outbox"
+                    AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="115.0"/>
+            <Button fx:id="trashFolderBtn" onAction="#changeFolder" prefWidth="200.0" text="Trash"
+                    AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="155.0"/>
+
+            <Button onAction="#refreshAction" prefWidth="150" text="Refresh" AnchorPane.bottomAnchor="45.0"
+                    AnchorPane.leftAnchor="35.0"/>
+            <Button onAction="#composeAction" prefWidth="150" text="Compose" AnchorPane.bottomAnchor="10.0"
+                    AnchorPane.leftAnchor="35.0"/>
+        </AnchorPane>
+
+        <TableView fx:id="emailTableView" styleClass="emails-table" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </AnchorPane>
+
+    <AnchorPane prefHeight="20" styleClass="footer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0">
+        <HBox AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="25.0">
+            <Label text="Status: "/>
+            <Label fx:id="clientStatusLabel" style="-fx-font-weight: bold;" text="STATUS"/>
+        </HBox>
+        <Circle fx:id="serverStatusCircle" radius="6.0" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="5.0"/>
+    </AnchorPane>
+</AnchorPane>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" styleClass="anchor-pane" prefHeight="500.0"
+            prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            fx:controller="it.unito.prog.controllers.ConsoleController" stylesheets="@console_scene.css">
+
+    <Label text="Console:" AnchorPane.topAnchor="15.0" AnchorPane.leftAnchor="15.0"/>
+    <ListView fx:id="consoleListView" styleClass="console-list-view" AnchorPane.topAnchor="35.0"
+              AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0"/>
+
+</AnchorPane>

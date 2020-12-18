@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.web.WebView?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="1200.0" styleClass="body"
+            stylesheets="@read_scene.css" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            fx:controller="it.unito.prog.controllers.ReadController">
+    <AnchorPane AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+                AnchorPane.topAnchor="0">
+        <Label text="From:" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="19.0"/>
+        <TextField fx:id="senderField" editable="false" prefHeight="25.0" AnchorPane.leftAnchor="78.0"
+                   AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0"/>
+
+        <Label text="To:" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="54.0"/>
+        <TextField fx:id="recipientField" editable="false" prefHeight="25.0" AnchorPane.leftAnchor="78.0"
+                   AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0"/>
+
+        <Label text="Subject:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="89.0"/>
+        <TextField fx:id="subjectField" editable="false" prefHeight="25.0" AnchorPane.leftAnchor="78.0"
+                   AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="85.0"/>
+
+        <AnchorPane styleClass="web-view" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="15.0"
+                    AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="125.0">
+            <WebView fx:id="htmlViewer" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0"
+                     AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0"/>
+        </AnchorPane>
+
+        <Button onAction="#forwardEmail" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" prefWidth="100.0"
+                text="Forward"/>
+        <Button onAction="#replyEmail" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="125.0" prefWidth="100.0"
+                text="Reply"/>
+        <Button onAction="#replyAllEmail" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="235.0" prefWidth="100.0"
+                text="Reply All"/>
+
+        <Button onAction="#closeAction" prefWidth="100.0" text="Close" AnchorPane.bottomAnchor="10.0"
+                AnchorPane.rightAnchor="15.0"/>
+    </AnchorPane>
+    <AnchorPane prefHeight="20" styleClass="footer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0">
+        <HBox AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="25.0">
+            <Label text="Status: "/>
+            <Label fx:id="clientStatusLabel" style="-fx-font-weight: bold;" text="STATUS"/>
+        </HBox>
+        <Circle fx:id="serverStatusCircle" radius="6.0" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="5.0"/>
+    </AnchorPane>
+</AnchorPane>

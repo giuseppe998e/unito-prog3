@@ -1,0 +1,22 @@
+.anchor-pane {
+    -fx-background-color: whitesmoke;
+}
+
+.console-list-view .list-cell {
+    -fx-background-color: #FFFFFF;
+}
+
+.console-list-view .list-cell:filled:selected {
+    -fx-background: #FFFFFF;
+}
+
+.console-list-view .list-cell:odd:filled:selected {
+    -fx-background: #FFFFFF;
+}
+
+.console-list-view .scroll-bar:horizontal .increment-arrow,
+.console-list-view .scroll-bar:horizontal .decrement-arrow,
+.console-list-view .scroll-bar:horizontal .increment-button,
+.console-list-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}

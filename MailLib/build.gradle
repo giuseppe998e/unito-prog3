@@ -1,0 +1,12 @@
+plugins {
+    id 'java-library'
+}
+
+group 'it.unito.prog'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.web.HTMLEditor?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="1200.0" styleClass="body"
+            stylesheets="@compose_scene.css" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            fx:controller="it.unito.prog.controllers.ComposeController">
+    <AnchorPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="0"
+                AnchorPane.rightAnchor="0">
+        <Label text="From:" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="19.0"/>
+        <TextField fx:id="senderField" editable="false" prefHeight="25.0" AnchorPane.leftAnchor="78.0"
+                   AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0"/>
+
+        <Label text="To:" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="54.0"/>
+        <TextField fx:id="recipientField" prefHeight="25.0" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="15.0"
+                   AnchorPane.topAnchor="50.0"/>
+
+        <Label text="Subject:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="89.0"/>
+        <TextField fx:id="subjectField" prefHeight="25.0" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="15.0"
+                   AnchorPane.topAnchor="85.0"/>
+
+        <HTMLEditor fx:id="htmlEditor" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="15.0"
+                    AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="125.0"/>
+
+        <Button text="Send" onAction="#sendAction" prefWidth="100.0" AnchorPane.bottomAnchor="10.0"
+                AnchorPane.rightAnchor="15.0"/>
+        <Button text="Cancel" onAction="#cancelAction" prefWidth="100.0" AnchorPane.bottomAnchor="10.0"
+                AnchorPane.rightAnchor="125.0"/>
+    </AnchorPane>
+    <AnchorPane prefHeight="20" styleClass="footer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0">
+        <HBox AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="25.0">
+            <Label text="Status: "/>
+            <Label fx:id="clientStatusLabel" style="-fx-font-weight: bold;" text="STATUS"/>
+        </HBox>
+        <Circle fx:id="serverStatusCircle" radius="6.0" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="5.0"/>
+    </AnchorPane>
+</AnchorPane>

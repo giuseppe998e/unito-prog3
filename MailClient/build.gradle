@@ -1,0 +1,37 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = '14'
+    modules = ['javafx.base', 'javafx.controls', 'javafx.fxml', 'javafx.web', 'javafx.media']
+}
+
+mainClassName = 'it.unito.prog.Main'
+def distribution = 'linux' // win, mac, linux
+
+dependencies {
+    implementation fileTree(dir: '../MailLib/build/libs', include: ['*.jar'])
+    implementation "org.json:json:20190722"
+    implementation "org.openjfx:javafx-base:$javafx.version:$distribution"
+    implementation "org.openjfx:javafx-web:$javafx.version:$distribution"
+    implementation "org.openjfx:javafx-fxml:$javafx.version:$distribution"
+    implementation "org.openjfx:javafx-media:$javafx.version:$distribution"
+    implementation "org.openjfx:javafx-controls:$javafx.version:$distribution"
+    implementation "org.openjfx:javafx-graphics:$javafx.version:$distribution"
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE // was 'INCLUDE'
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    from {
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

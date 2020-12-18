@@ -1,0 +1,16 @@
+.body {
+    -fx-background-color: white;
+}
+
+.footer {
+    -fx-background-color: lightgray;
+}
+
+.emails-table {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.logo-text {
+    -fx-font: 24 arial;
+}
